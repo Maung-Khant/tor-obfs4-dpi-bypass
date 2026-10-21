@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#1e1e2e" rx="10"/>
+
+  <!-- Title -->
+  <text x="500" y="40" fill="#cdd6f4" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle">AnonSurf &amp; obfs4 DPI Bypass Architecture</text>
+
+  <!-- Node 1: Ubuntu Client -->
+  <rect x="50" y="150" width="160" height="80" rx="8" fill="#313244" stroke="#89b4fa" stroke-width="2"/>
+  <text x="130" y="185" fill="#cdd6f4" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">Ubuntu 24.04</text>
+  <text x="130" y="205" fill="#a6adc8" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">(Client Machine)</text>
+
+  <!-- Arrow 1 -->
+  <line x1="210" y1="190" x2="260" y2="190" stroke="#89b4fa" stroke-width="3" marker-end="url(#arrow-blue)"/>
+  <text x="235" y="180" fill="#89b4fa" font-family="Arial, sans-serif" font-size="11" text-anchor="middle">All Traffic</text>
+
+  <!-- Node 2: AnonSurf -->
+  <rect x="260" y="150" width="160" height="80" rx="8" fill="#313244" stroke="#cba6f7" stroke-width="2"/>
+  <text x="340" y="185" fill="#cdd6f4" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">AnonSurf (iptables)</text>
+  <text x="340" y="205" fill="#a6adc8" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Captures &amp; Redirects</text>
+
+  <!-- Arrow 2 -->
+  <line x1="420" y1="190" x2="470" y2="190" stroke="#cba6f7" stroke-width="3" marker-end="url(#arrow-purple)"/>
+  <text x="445" y="180" fill="#cba6f7" font-family="Arial, sans-serif" font-size="11" text-anchor="middle">Obfuscated</text>
+
+  <!-- Node 3: obfs4 Bridge -->
+  <rect x="470" y="150" width="160" height="80" rx="8" fill="#313244" stroke="#f9e2af" stroke-width="2"/>
+  <text x="550" y="185" fill="#cdd6f4" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">obfs4 Bridge</text>
+  <text x="550" y="205" fill="#a6adc8" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Hidden Entry Node</text>
+
+  <!-- Arrow 3 -->
+  <line x1="630" y1="190" x2="680" y2="190" stroke="#f9e2af" stroke-width="3" marker-end="url(#arrow-yellow)"/>
+  <text x="655" y="180" fill="#f9e2af" font-family="Arial, sans-serif" font-size="11" text-anchor="middle">Fake HTTPS</text>
+
+  <!-- Node 4: ISP DPI -->
+  <rect x="680" y="130" width="140" height="120" rx="8" fill="#313244" stroke="#f38ba8" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="750" y="175" fill="#cdd6f4" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">ISP</text>
+  <text x="750" y="195" fill="#f38ba8" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">Deep Packet</text>
+  <text x="750" y="215" fill="#f38ba8" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">Inspection</text>
+
+  <!-- Arrow 4 -->
+  <line x1="820" y1="190" x2="870" y2="190" stroke="#f38ba8" stroke-width="3" marker-end="url(#arrow-red)"/>
+  <text x="845" y="180" fill="#f38ba8" font-family="Arial, sans-serif" font-size="11" text-anchor="middle">Passes</text>
+
+  <!-- Node 5: Tor Network -->
+  <rect x="870" y="150" width="100" height="80" rx="8" fill="#313244" stroke="#a6e3a1" stroke-width="2"/>
+  <text x="920" y="185" fill="#cdd6f4" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">Tor</text>
+  <text x="920" y="205" fill="#a6e3a1" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Network</text>
+
+  <!-- Bottom DNS Component -->
+  <rect x="260" y="320" width="370" height="60" rx="8" fill="#313244" stroke="#94e2d5" stroke-width="2"/>
+  <text x="445" y="345" fill="#cdd6f4" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">Local DNS (systemd-resolved)</text>
+  <text x="445" y="365" fill="#94e2d5" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Restored automatically by toggle script upon stopping</text>
+
+  <!-- Arrow from AnonSurf to DNS -->
+  <line x1="340" y1="230" x2="340" y2="320" stroke="#94e2d5" stroke-width="2" stroke-dasharray="4,4" marker-end="url(#arrow-teal)"/>
+
+  <!-- Legend / Arrowheads -->
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#89b4fa"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#cba6f7"/>
+    </marker>
+    <marker id="arrow-yellow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#f9e2af"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#f38ba8"/>
+    </marker>
+    <marker id="arrow-teal" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#94e2d5"/>
+    </marker>
+  </defs>
+</svg>
