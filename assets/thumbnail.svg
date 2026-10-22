@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 628" width="100%" height="100%">
+  <!-- Dark Gradient Background -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1e2e" />
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#89b4fa" />
+      <stop offset="100%" stop-color="#a6e3a1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)" />
+  
+  <!-- Subtle Grid Pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#313244" stroke-width="1" opacity="0.5"/>
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid)" />
+
+  <!-- Left Side: The "Blocked" Concept (Red) -->
+  <rect x="50" y="150" width="300" height="300" rx="15" fill="#1e1e2e" stroke="#f38ba8" stroke-width="3" opacity="0.8"/>
+  <text x="200" y="210" fill="#f38ba8" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle">ISP DPI</text>
+  <text x="200" y="240" fill="#cdd6f4" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">Deep Packet Inspection</text>
+  
+  <!-- Blocked Sign -->
+  <circle cx="200" cy="350" r="50" fill="none" stroke="#f38ba8" stroke-width="8" />
+  <line x1="165" y1="315" x2="235" y2="385" stroke="#f38ba8" stroke-width="8" />
+
+  <!-- Center Arrow -->
+  <path d="M 380 300 L 430 300" stroke="#cba6f7" stroke-width="6" marker-end="url(#arrow)" />
+  <text x="405" y="280" fill="#cba6f7" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">obfs4</text>
+
+  <!-- Right Side: The "Bypass" Concept (Green/Blue) -->
+  <rect x="450" y="150" width="700" height="300" rx="15" fill="#1e1e2e" stroke="#a6e3a1" stroke-width="3" opacity="0.8"/>
+  
+  <!-- Terminal Header -->
+  <rect x="450" y="150" width="700" height="40" rx="15" fill="#313244" />
+  <circle cx="480" cy="170" r="8" fill="#f38ba8" />
+  <circle cx="510" cy="170" r="8" fill="#f9e2af" />
+  <circle cx="540" cy="170" r="8" fill="#a6e3a1" />
+  
+  <!-- Terminal Text -->
+  <text x="480" y="230" fill="#a6e3a1" font-family="monospace" font-size="20">user@ubuntu:~$ sudo anonsurf start</text>
+  <text x="480" y="270" fill="#cdd6f4" font-family="monospace" font-size="20">[i] All traffic redirected through Tor...</text>
+  <text x="480" y="310" fill="#89b4fa" font-family="monospace" font-size="20">[✓] You are under AnonSurf tunnel!</text>
+
+  <!-- Tor Onion Icon (Simplified) -->
+  <circle cx="800" cy="380" r="40" fill="#cba6f7" opacity="0.2"/>
+  <path d="M800 340 C820 340, 840 360, 840 380 C840 400, 820 420, 800 420 C780 420, 760 400, 760 380 C760 360, 780 340, 800 340 Z" fill="none" stroke="#cba6f7" stroke-width="4"/>
+  <path d="M800 355 C810 355, 820 365, 820 380 C820 395, 810 405, 800 405 C790 405, 780 395, 780 380 C780 365, 790 355, 800 355 Z" fill="none" stroke="#cba6f7" stroke-width="3"/>
+
+  <!-- Main Title Area -->
+  <rect x="0" y="500" width="1200" height="128" fill="#11111b" />
+  <text x="600" y="560" fill="#cdd6f4" font-family="Arial, sans-serif" font-size="36" font-weight="bold" text-anchor="middle">Bypassing ISP Censorship</text>
+  <text x="600" y="600" fill="#89b4fa" font-family="Arial, sans-serif" font-size="22" text-anchor="middle">Python • Tor • Bash</text>
+
+  <!-- Arrowhead Definition -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#cba6f7"/>
+    </marker>
+  </defs>
+</svg>

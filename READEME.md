@@ -99,3 +99,5 @@ During deployment, we encountered and resolved several critical errors:
 ---
 
 > **Disclaimer:** This project was created for educational purposes and to bypass state-level censorship for accessing free information. Always adhere to local laws.
+
+> 📝 **Read the full case study on Medium:** [How I Bypassed Myanmar’s ISP Censorship](https://medium.com/@maungkhant.sec/how-i-bypassed-myanmars-isp-censorship-using-python-tor-and-bash-42d266d9d785?sharedUserId=maungkhant.sec)
