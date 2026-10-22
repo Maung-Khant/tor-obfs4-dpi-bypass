@@ -73,6 +73,12 @@ During deployment, we encountered and resolved several critical errors:
 
 * **Tor Not Running on Start:** The default `tor` service in Ubuntu is a master instance. AnonSurf requires the `tor@default` instance. This was resolved by ensuring bridges were correctly formatted and the Tor service was restarted.
 
+* **Python Bridge API Blocked (`[Errno 101] Network is unreachable`)**
+  *   **Cause:** While standard internet traffic (Google, YouTube) worked, the ISP's DPI specifically blocked access to `bridges.torproject.org`. This prevented the Python script from auto-fetching bridges.
+  *   **Resolution:** This is an expected constraint in highly censored environments. The Python script was updated to catch `ConnectionError` and gracefully inform the user to use the manual fallback: fetching bridges via the `@GetBridgesBot` on Telegram.
+  ![ISP Blocking API](assets/api-blocked.png)
+  *Figure 4: Python script correctly identifying ISP DPI blocking the Tor BridgeDB API.*
+
 ## ✅ Verification & Testing Methodology
 
 * **API Verification:** `curl -s https://check.torproject.org/api/ip`
